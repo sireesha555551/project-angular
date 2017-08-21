@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-5 col-md-3">
+          <div class="form-login">
+          <h4>Your Comment</h4>
+          <input type="text" required minlength="3" maxlength="6"  ngModel  #userName="ngModel"   class="form-control input-sm chat-input" placeholder="username" /><br>
+         
+          <div class="paragraph" *ngIf=" userName.touched && !userName.valid">
+
+                      <div *ngIf="userName.errors.required">Username Required</div>
+                       <div *ngIf="userName.errors.minlength"> 3 characters needed</div>
+                        <div *ngIf="userName.errors.maxlength">6 is the max characters</div>
+
+          </div>
+
+
+
+          <input type="text" required minlength="3" maxlength="6"  ngModel  #password="ngModel"   class="form-control input-sm chat-input" placeholder="password"  /><br>
+          
+           <div class="paragraph" *ngIf=" password.touched && !password.valid">
+ 
+                       <div *ngIf="password.errors.required">password Required</div>
+                        <div *ngIf="password.errors.minlength"> 3 characters needed</div>
+                         <div *ngIf="password.errors.maxlength">6 is the max characters</div>
+ 
+           </div>
+
+          
+          
+          <div class="wrapper">
+          <span class="group-btn">     
+              <button class="btn btn-primary btn-md">Send</button>
+          </span>
+          </div>
+          </div>
+      
+      </div>
+  </div>
+</div>
