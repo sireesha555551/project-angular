@@ -9,7 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NgformsComponent } from './ngforms/ngforms.component';
 import { FormsModule} from '@angular/forms';
 import { LoginComponent} from './login/login.component';
-import { ContactusComponent } from './contactus/contactus.component'
+import { ContactusComponent } from './contactus/contactus.component';
+import { AboutComponent } from './about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ContactusComponent } from './contactus/contactus.component'
     FooterComponent,
     NgformsComponent,
     LoginComponent,
-    ContactusComponent
+    ContactusComponent,
+    AboutComponent,
+  
     
   ],
   imports: [
@@ -43,7 +47,15 @@ import { ContactusComponent } from './contactus/contactus.component'
       {
         path:'home',
         component:BodyComponent
+      },
+      {
+        path:'about',
+        component: AboutComponent
+          
       }
+      
+      
+      
       
     ])
   ],
