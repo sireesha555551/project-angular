@@ -27,11 +27,14 @@ a:hover,a:focus{
 }
 
 #contact{
-	background:#333333;
+	background:#80D1F2;
 	color:#FFFAFA;
 	padding-bottom:80px;
 }
 
 textarea.form-control{
     height:100px;
+}
+.paragraph{
+	color:red;
 }

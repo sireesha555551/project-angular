@@ -8,12 +8,25 @@
                 <div class="col-md-8 col-md-offset-2">
                   <form class="form-horizontal">
                     <div class="form-group">
-                      <label for="exampleInputName2">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                      <input type="text" name="userName" required minlength="3" maxlength="8" ngModel #userName="ngModel" class="form-control input-sm chat-input"
+                      placeholder="username" /><br>
+
+                  <div class="paragraph" *ngIf="userName.touched && !userName.valid">
+                      <div *ngIf="userName.errors.required">username is required</div>
+                      <div *ngIf="userName.errors.minlength">atleast 3 charecters</div>
+                      <div *ngIf="userName.errors.maxlength">atleast 8 charecters</div>
+                  </div>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail2">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                      <input type="text" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" name="email"
+                      required minlength="3" maxlength="20" ngModel #email="ngModel" class="form-control input-sm chat-input"
+                      placeholder="email" /><br>
+
+                  <div class="paragraph" *ngIf="email.touched && !email.valid">
+                      <div *ngIf="email.errors.required">email is required</div>
+                      <div *ngIf="email.errors.minlength">atleast 3 charecters</div>
+                      <div *ngIf="email.errors.maxlength">atleast 8 charecters</div>
+                  </div>
                     </div>
                     <div class="form-group ">
                       <label for="exampleInputText">Your Message</label>

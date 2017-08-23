@@ -1,28 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import { connectService} from '../connect.service';
 
 @Component({
   selector: 'app-ngforms',
   templateUrl: './ngforms.component.html',
-  styleUrls: ['./ngforms.component.css']
+  styleUrls: ['./ngforms.component.css'],
+  providers: [connectService]
 })
 export class NgformsComponent  {
-  
-  contact=[{
-    id:"1",
-    name:"email"
-  },
-{
-  id:"2",
-  name:"mobile"
+  constructor(private service:connectService){
 
-},{
-  id:"3",
-  name:"iphone"
-}]
+
+  }
+  
+//   contact=[{
+//     id:"1",
+//     name:"email"
+//   },
+// {
+//   id:"2",
+//   name:"mobile"
+
+// },{
+//   id:"3",
+//   name:"iphone"
+// }]
 submit(f){
   // console.log(f.value.userName);
+
   console.log(f);
+  let data=f.value
+  this.service.postdata(f.value);
 }
+
  
 
 }

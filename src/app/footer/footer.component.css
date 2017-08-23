@@ -1,10 +1,10 @@
 @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
 #footer {
-    border-top: 5px solid #CDB380;
-    background: #033649 none repeat scroll 0% 0%;
+    
+    background: #000000 none repeat scroll 0% 0%;
     padding-top: 30px;
-    margin-top: 60px;
+    margin-top: 13px;
     clear: both;
     color: #AAA;
     display: block;

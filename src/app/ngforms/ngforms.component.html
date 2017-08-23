@@ -1,66 +1,54 @@
 <div class="container">
     <div class="row">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <form method="POST" action="#" role="form">
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+            <div class="panel panel-primary">
+                <div class="panel-body">
                     <div class="form-group">
                         <h2>Create account</h2>
                     </div>
                     <div class="form-group">
-                        <input type="text"  name="userName" required   minlength="3" maxlength="8" ngModel #userName="ngModel"   class="form-control input-sm chat-input" placeholder="username"/><br>
-                        
-                         <div class="paragraph" *ngIf="userName.touched && !userName.valid">
-                             <div *ngIf="userName.errors.required">username is required</div>
-                             <div *ngIf="userName.errors.minlength">atleast 3 charecters</div>
-                             <div *ngIf="userName.errors.maxlength">atleast 8 charecters</div>
-                         </div>
+                        <input type="text" name="userName" required minlength="3" maxlength="8" ngModel #userName="ngModel" class="form-control input-sm chat-input"
+                            placeholder="username" /><br>
+
+                        <div class="paragraph" *ngIf="userName.touched && !userName.valid">
+                            <div *ngIf="userName.errors.required">username is required</div>
+                            <div *ngIf="userName.errors.minlength">atleast 3 charecters</div>
+                            <div *ngIf="userName.errors.maxlength">atleast 8 charecters</div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        
-                        <input type="text" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" name="email" required   minlength="3" maxlength="8" ngModel #email="ngModel"   class="form-control input-sm chat-input" placeholder="email"/><br>
-                        
-                         <div class="paragraph" *ngIf="email.touched && !email.valid">
-                             <div *ngIf="email.errors.required">email is required</div>
-                             <div *ngIf="email.errors.minlength">atleast 3 charecters</div>
-                             <div *ngIf="email.errors.maxlength">atleast 8 charecters</div>
-                         </div>
+
+                        <input type="text" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" name="email"
+                            required minlength="3" maxlength="20" ngModel #email="ngModel" class="form-control input-sm chat-input"
+                            placeholder="email" /><br>
+
+                        <div class="paragraph" *ngIf="email.touched && !email.valid">
+                            <div *ngIf="email.errors.required">email is required</div>
+                            <div *ngIf="email.errors.minlength">atleast 3 charecters</div>
+                            <div *ngIf="email.errors.maxlength">atleast 8 charecters</div>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        
-                        <input type="text"  pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" name="emailagain" required   minlength="3" maxlength="8" ngModel #emailagain="ngModel"   class="form-control input-sm chat-input" placeholder="conform email"/><br>
-                        
-                         <div class="paragraph" *ngIf="emailagain.touched && !emailagain.valid">
-                             <div *ngIf="emailagain.errors.required">email again is required</div>
-                             <div *ngIf="emailagain.errors.minlength">atleast 3 charecters</div>
-                             <div *ngIf="emailagain.errors.maxlength">atleast 8 charecters</div>
-                         </div>
+
+                        <input type="password" name="password" required minlength="3" maxlength="8" ngModel #password="ngModel" class="form-control input-sm chat-input"
+                            placeholder="password" /><br>
+
+                        <div class="paragraph" *ngIf="password.touched && !password.valid">
+                            <div *ngIf="password.errors.required">password is required</div>
+                            <div *ngIf="password.errors.minlength">atleast 3 charecters</div>
+                            <div *ngIf="password.errors.maxlength">atleast 8 charecters</div>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        
-                        <input type="text" name="password" required   minlength="3" maxlength="8" ngModel #password="ngModel"   class="form-control input-sm chat-input" placeholder="password"/><br>
-                        
-                         <div class="paragraph" *ngIf="password.touched && !password.valid">
-                             <div *ngIf="password.errors.required">password is required</div>
-                             <div *ngIf="password.errors.minlength">atleast 3 charecters</div>
-                             <div *ngIf="password.errors.maxlength">atleast 8 charecters</div>
-                         </div>
+                        <button id="signupSubmit" type="submit" class="btn btn-info btn-block" [disabled]="f.invalid">Create your account</button>
                     </div>
-                    <div class="form-group">
-                    
-                        <input type="text" name="passwordagain" required   minlength="3" maxlength="8" ngModel #passwordagain="ngModel"   class="form-control input-sm chat-input" placeholder="conform password"/><br>
-                        
-                         <div class="paragraph" *ngIf="passwordagain.touched && !passwordagain.valid">
-                             <div *ngIf="passwordagain.errors.required">password again is required</div>
-                             <div *ngIf="passwordagain.errors.minlength">atleast 3 charecters</div>
-                             <div *ngIf="passwordagain.errors.maxlength">atleast 8 charecters</div>
-                         </div>
-                    </div>
-                    <div class="form-group">
-                        <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your account</button>
-                    </div>
-                    
-                </form>
+
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
+
+{{f.value | json}} 
